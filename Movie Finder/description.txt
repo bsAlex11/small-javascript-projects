@@ -1,0 +1,4 @@
+
+
+  The app uses AJAX calls to retrieve data from the OMDB API based on the user's input and then display them using the ES6 template literals
+  
