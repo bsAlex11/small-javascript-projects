@@ -15,13 +15,48 @@
            <input type="submit" value="Search"> 
      </form>
 
-     <div id="currentWeather-container">
-         
-        <div id="currentDate"></div>
-        <div id="details"> </div>
- 
+   <div id="container">
 
-     </div>      
+      <div id="currentWeather-container">
+         
+        <div id="currentDate">
+          <div id="weather-details">
+               <div id="weather-icon">   
+              ${icon} 
+               </div>     
+                  <div id="location">   
+              <p>${data.name}</p>
+              <p>${country}</p>
+              <p>${data.weather[0].main} </p>
+              </div>
+              <div id="temp">
+                   <span>${days[time.getDay()]} </span> <span>${time.getHours()}:${time.getMinutes()} </span>        
+                  <p>${parseInt(data.main.temp,10)}&deg;C </p>
+              </div>
+           </div>   
+            <div id="temp-interval">
+                 <p> <img src="therm.png"> Max. Temp:${data.main.temp_max}</p>
+                 <p> <img src="therm.png"> Min. Temp:${data.main.temp_min} </p>
+            </div>
+        </div>
+        
+        <div id="details">
+              <p>Humidity: ${data.main.humidity}% </p>
+                               <p>Pressure: ${data.main.pressure} mmHg </p>
+                               <p>Wind Speed: ${data.wind.speed} Km/h </p> 
+               </div>
+     </div> 
+
+     <div id="next-forecast">
+
+            <p>day </p>
+            <p>week </p>
+            <p>month </p>
+            <p>year </p>
+     </div>       
+
+   </div>  
+         
   </main>     
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
